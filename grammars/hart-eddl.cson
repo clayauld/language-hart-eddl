@@ -1,0 +1,1822 @@
+'scopeName': 'source.hart-eddl'
+'fileTypes': [
+  'dd'
+  'ddl'
+]
+'firstLineMatch': '(?i)-\\*-[^*]*(Mode:\\s*)?C(\\s*;.*?)?\\s*-\\*-'
+'name': 'HART eDDL'
+'patterns': [
+  {
+    'include': '#preprocessor-rule-enabled'
+  }
+  {
+    'include': '#preprocessor-rule-disabled'
+  }
+  {
+    'include': '#preprocessor-rule-conditional'
+  }
+  {
+    'include': '#comments'
+  }
+  {
+    'match': '\\b(break|case|continue|default|do|else|for|goto|if|_Pragma|return|switch|while)\\b'
+    'name': 'keyword.control.hart-eddl'
+  }
+  {
+    'match': '\\b(ALARM_CODE|ANALOG_CHANNEL_FLAGS|ANALOG_DAMPING|ANALOG_UNITS|ANALOG_VALUE|CAPTURE_MODE|CASE|CLASSIFICATION|COLD_JUNCT_COMP_TYPE|DAMPING_VALUE|DAQ|DEFAULT|DATA_QUALITY|DEVICE_FAMILY_STATUS|DEVICE_FAMILY|DIGITAL_UNITS|DEVICE_VARIABLE|DIGITAL_VALUE|DUMMY|ELSE|FOURTH|FALSE|IF|LIMIT_STATUS|LOWER_RANGE_VALUE|LOWER_ENDPOINT_VALUE|LOWER_SENSOR_LIMIT|MAN_CJC_UNITS|LOWER_TRIM_POINT|MAN_CJC_VALUE|MAXIMUM_UPPER_TRIM_POINT|MAXIMUM_LOWER_TRIM_POINT|MINIMUM_SPAN|MINIMUM_LOWER_TRIM_POINT|MINIMUM_TRIM_DIFFERENTIAL|MINIMUM_UPPER_TRIM_POINT|MORE_FAMILY_STATUS|NUMBER_WIRES|PERCENT_RANGE|PRIMARY|PROBE_CONNECTION|PROBE_TYPE|QUATERNARY|RANGE_UNITS|SECONDARY|RANGING|SELECT|SENSOR_SERIAL_NUMBER|SENSOR_UNITS|SHED_TIME|SOURCE_COMMAND_NUMBER|SOURCE_DEVICE_ID|SOURCE_DEVICE_TYPE|SOURCE_SLOT_NUMBER|SOURCE_MANUFACTURER|TERTIARY|STANDARD|TRANSFER_FUNCTION|TRIM_POINT_SUPPORT|TRIM_POINT_UNITS|TRUE|UPPER_ENDPOINT_VALUE|UPPER_RANGE_VALUE|UPPER_SENSOR_LIMIT|UPPER_TRIM_POINT)\\b'
+    'name': 'variable.parameter.hart-eddl'
+  }
+  {
+    'match': '\\b(ABORT_ON_ALL_COMM_STATUS|ABORT_ON_ALL_DEVICE_STATUS|ABORT_ON_ALL_RESPONSE_CODES|ABORT_ON_COMM_STATUS|ABORT_ON_COMM_ERROR|ABORT_ON_DEVICE_STATUS|ABORT_ON_NO_DEVICE|ABORT_ON_RESPONSE_CODE|ACKNOWLEDGE|ALL|AO|AUTO|BAD|BIT_STRING|COMM_ERROR|DATE_AND_TIME|DELAY|DELAY_TIME|DETAIL|DISPLAY_FORMAT|DOUBLE|DURATION|GET_DEV_VAR_VALUE|DV|GET_LOCAL_VAR_VALUE|GOOD|IGNORE_ALL_COMM_STATUS|IGNORE_ALL_DEVICE_STATUS|IGNORE_ALL_RESPONSE_CODES|IGNORE_COMM_ERROR|IGNORE_COMM_STATUS|IGNORE_DEVICE_STATUS|IGNORE_IN_HANDHELD|IGNORE_NO_DEVICE|IGNORE_RESPONSE_CODE|LOCAL_INTERFACE|MANUAL|PROCESS|PUT_MESSAGE|READ_TIMEOUT|RELEASED|RETRY_ON_ALL_COMM_STATUS|RETRY_ON_ALL_DEVICE_STATUS|RETRY_ON_ALL_RESPONSE_CODES|RETRY_ON_COMM_ERROR|RETRY_ON_COMM_STATUS|RETRY_ON_DEVICE_STATUS|RETRY_ON_NO_DEVICE|RETRY_ON_RESPONSE_CODE|REVISION|SELECT_FROM_LIST|SELF_CORRECTING|SET_NUMBER_OF_RETRIES|SUMMARY|TV|TIME|UNCORRECTABLE|VARID|WRITE_ITMEOUT|XMTR_ABORT_ON_ALL_COMM_STATUS|XMTR_ABORT_ON_ALL_DEVICE_STATUS|XMTR_ABORT_ON_ALL_RESPONSE_CODES|XMTR_ABORT_ON_COMM_ERROR|XMTR_ABORT_ON_COMM_STATUS|XMTR_ABORT_ON_DATA|XMTR_ABORT_ON_NO_DEVICE|XMTR_ABORT_ON_DEVICE_STATUS|XMTR_ABORT_ON_RESPONSE_CODE|XMTR_IGNORE_ALL_COMM_STATUS|XMTR_IGNORE_ALL_DEVICE_STATUS|XMTR_IGNORE_ALL_RESPONSE_CODES|XMTR_IGNORE_COMM_ERROR|XMTR_IGNORE_COMM_STATUS|XMTR_IGNORE_NO_DEVICE|XMTR_IGNORE_DEVICE_STATUS|XMTR_IGNORE_RESPONSE_CODE|XMTR_RETRY_ON_ALL_COMM_STATUS|XMTR_RETRY_ON_ALL_DEVICE_STATUS|XMTR_RETRY_ON_COMM_ERROR|XMTR_RETRY_ON_ALL_RESPONSE_CODES|XMTR_RETRY_ON_COMM_STATUS|XMTR_RETRY_ON_DATA|XMTR_RETRY_ON_DEVICE_STATUS|XMTR_RETRY_ON_NO_DEVICE|XMTR_RETRY_ON_RESPONSE_CODE)\\b'
+    'name': 'keyword.control.hart-eddl'
+  }
+  {
+     'match': '\\b(ADD|ALL_TABLES|ANALOG_CHANNEL|ANALOG_OUTPUT|ARRAYS|ASCII|CAPACITY|BIT_ENUMERATED|CHARTS|COLUMNBREAK|COLLECTIONS|COMMANDS|COMPUTATION|CORRECTABLE|CORRECTION|COUNT|CYCLE_TIME|DATA|DATA_ENTRY_ERROR|DATA_ENTRY_WARNING|DATE|DD_REVISION|DEFAULT_VALUE|DEFINITION|DELETE|DEVICE|DEVICE_REVISION|DEVICE_TYPE|DIAGNOSTIC|DIALOG|DISCRETE|DISPLAY_FORMAT|DISPLAY_ITEMS|DISPLAY_VALUE|EDIT_DISPLAYS|DYNAMIC|EDIT_FORMAT|EDIT_ITEMS|ELEMENTS|EMPHASIS|ENUMERATED|EVENT|EVERYTHING|FIRST|FLOAT|FREQUENCY|GAUGE|GRAPHS|GROUP|HARDWARE|HART|HEIGHT|HORIZONTAL|HORIZONTAL_BAR|INDEX|INFO|INIT_ACTIONS|INLINE|INPUT|INTEGER|KEY_POINTS|LARGE|LAST|LENGTH|LINE_COLOR|LINE_TYPE|LINK|LOCAL_DISPLAY|MANUFACTURER|MAX_VALUE|MAX_VALUE1|MAX_VALUE2|MEDIUM|MEMBERS|MENUS|METHODS|MIN_VALUE|MIN_VALUE1|MIN_VALUE2|MISC|MISC_ERROR|MISC_WARNING|MODE|MODE_ERROR|MORE|NO_UNIT|NUMBER|NUMBER_OF_ELEMENTS|NUMBER_OF_POINTS|OPERATION|PACKED_ASCII|ORIENTATION|PAGE|PASSWORD|PATH|POST_EDIT_ACTIONS|POST_READ_ACTIONS|POST_WRITE_ACTIONS|PRE_EDIT_ACTIONS|PRE_READ_ACTIONS|PRE_WRITE_ACTIONS|PROCESS_ERROR|RANGE|READ|READ_ONLY|REDEFINE|REDEFINITIONS|REFRESH_ACTIONS|RELATIONS|REPLY|RESPONSE_CODES|REQUEST|REVIEW|ROWBREAK|SCALING|SCALING_FACTOR|SCOPE|SEPARATOR|SERVICE|SMALL|SOFTWARE|SOURCES|STATE|STRIP|SUCCESS|TABLE|SWEEP|UNSIGNED_INTEGER|USER_INTERFACE|VALIDITY|VARIABLES|VECTORS|VERTICAL|VERTICAL_BAR|WAVEFORMS|WIDTH|WINDOW|WRITE|XX_LARGE|XX_SMALL|XY|X_AXIS|X_INCREMENT|X_LARGE|X_INITIAL|X_SMALL|X_VALUES|YT|Y_AXIS|Y_VALUES)\\b'
+     'name': 'support.function.hart-eddl'
+  }
+  {
+     'match': '\\b(TYPE|LABEL|NO_LABEL|HANDLING|TRANSACTION|ITEMS|CLASS|HELP|CONSTANT_UNIT|STYLE)\\b'
+     'name': 'entity.name.class.hart-eddl'
+  }
+  {
+     'match': '\\b(ARRAY|AXIS|CHART|COLLECTION|COMMAND|EDIT_DISPLAY|FILE|GRAPH|GRID|IMAGE|LIST|MENU|METHOD|OF|REFRESH|SOURCE|UNIT|VARIABLE|WAVEFORM|WRITE_AS_ONE)\\b'
+     'name': 'storage.type.annotation.hart-eddl'
+  }
+  {
+     'match': '\\b(abort|acknowledge|add_abort_method|assign_double|assign_float|assign_int|assign_var|dassign|delay|display_comm_status|display|display_device_status|display_response_status|display_xmtr_status|ext_send_command|ext_send_command_trans|fassign|fgetval|float_value|fsetval|fvar_value|get_dev_var_value|get_dictionary_string|get_local_var_value|get_more_status|get_status_code_string|iassign|igetval|int_value|isetval|ivar_value|lassign|lgetval|long_value|lsetval|lvar_value|process_abort|put_message|remove_abort_method|remove_all_abort_methods|rspcode_string|save_values|select_from_list|send|send_command|send_command_trans|send_transsigned|vassign)\\b'
+     'name': 'function.any-method.hart-eddl'
+  }
+  {
+    'include': '#storage_types'
+  }
+  {
+    'match': '\\b(const|extern|register|restrict|static|volatile|inline)\\b'
+    'name': 'storage.modifier.hart-eddl'
+  }
+  {
+    # Common naming idiom for C constants: "kConstantVariable"
+    'match': '\\bk[A-Z]\\w*\\b'
+    'name': 'constant.other.variable.mac-classic.hart-eddl'
+  }
+  {
+    'match': '\\bg[A-Z]\\w*\\b'
+    'name': 'variable.other.readwrite.global.mac-classic.hart-eddl'
+  }
+  {
+    'match': '\\bs[A-Z]\\w*\\b'
+    'name': 'variable.other.readwrite.static.mac-classic.hart-eddl'
+  }
+  {
+    'match': '\\b(NULL|true|false|TRUE|FALSE)\\b'
+    'name': 'constant.language.hart-eddl'
+  }
+  {
+    'include': '#operators'
+  }
+  {
+    'include': '#numbers'
+  }
+  {
+    'include': '#strings'
+  }
+  {
+    'begin': '''(?x)
+      ^\\s* ((\\#)\\s*define) \\s+    # define
+      ((?<id>[a-zA-Z_$][\\w$]*))      # macro name
+      (?:
+        (\\()
+          (
+            \\s* \\g<id> \\s*         # first argument
+            ((,) \\s* \\g<id> \\s*)*  # additional arguments
+            (?:\\.\\.\\.)?            # varargs ellipsis?
+          )
+        (\\))
+      )?
+    '''
+    'beginCaptures':
+      '1':
+        'name': 'keyword.control.directive.define.hart-eddl'
+      '2':
+        'name': 'punctuation.definition.directive.hart-eddl'
+      '3':
+        'name': 'entity.name.function.preprocessor.hart-eddl'
+      '5':
+        'name': 'punctuation.definition.parameters.begin.hart-eddl'
+      '6':
+        'name': 'variable.parameter.preprocessor.hart-eddl'
+      '8':
+        'name': 'punctuation.separator.parameters.hart-eddl'
+      '9':
+        'name': 'punctuation.definition.parameters.end.hart-eddl'
+    'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
+    'name': 'meta.preprocessor.macro.hart-eddl'
+    'patterns': [
+      {
+        'include': '#preprocessor-rule-define-line-contents'
+      }
+    ]
+  }
+  {
+    'begin': '^\\s*((#)\\s*(error|warning))\\b'
+    'captures':
+      '1':
+        'name': 'keyword.control.directive.diagnostic.$3.hart-eddl'
+      '2':
+        'name': 'punctuation.definition.directive.hart-eddl'
+    'end': '(?<!\\\\)(?=\\n)|(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))'
+    'name': 'meta.preprocessor.diagnostic.hart-eddl'
+    'patterns': [
+      {
+        'include': '#comments'
+      }
+      {
+        'include': '#strings'
+      }
+      {
+        'include': '#line_continuation_character'
+      }
+    ]
+  }
+  {
+    'begin': '^\\s*((#)\\s*(include(?:_next)?|import))\\b\\s*'
+    'beginCaptures':
+      '1':
+        'name': 'keyword.control.directive.$3.hart-eddl'
+      '2':
+        'name': 'punctuation.definition.directive.hart-eddl'
+    'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
+    'name': 'meta.preprocessor.include.hart-eddl'
+    'patterns': [
+      {
+        'include': '#line_continuation_character'
+      }
+      {
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.hart-eddl'
+        'end': '"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.hart-eddl'
+        'name': 'string.quoted.double.include.hart-eddl'
+      }
+      {
+        'begin': '<'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.hart-eddl'
+        'end': '>'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.hart-eddl'
+        'name': 'string.quoted.other.lt-gt.include.hart-eddl'
+      }
+    ]
+  }
+  {
+    'include': '#pragma-mark'
+  }
+  {
+    'begin': '^\\s*((#)\\s*line)\\b'
+    'beginCaptures':
+      '1':
+        'name': 'keyword.control.directive.line.hart-eddl'
+      '2':
+        'name': 'punctuation.definition.directive.hart-eddl'
+    'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
+    'name': 'meta.preprocessor.hart-eddl'
+    'patterns': [
+      {
+        'include': '#strings'
+      }
+      {
+        'include': '#numbers'
+      }
+      {
+        'include': '#line_continuation_character'
+      }
+    ]
+  }
+  {
+    'begin': '^\\s*(?:((#)\\s*undef))\\b'
+    'beginCaptures':
+      '1':
+        'name': 'keyword.control.directive.undef.hart-eddl'
+      '2':
+        'name': 'punctuation.definition.directive.hart-eddl'
+    'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
+    'name': 'meta.preprocessor.hart-eddl'
+    'patterns': [
+      {
+        'match': '[a-zA-Z_$][\\w$]*'
+        'name': 'entity.name.function.preprocessor.hart-eddl'
+      }
+      {
+        'include': '#line_continuation_character'
+      }
+    ]
+  }
+  {
+    'begin': '^\\s*(?:((#)\\s*pragma))\\b'
+    'beginCaptures':
+      '1':
+        'name': 'keyword.control.directive.pragma.hart-eddl'
+      '2':
+        'name': 'punctuation.definition.directive.hart-eddl'
+    'end': '(?=(?://|/\\*))|(?<!\\\\)(?=\\n)'
+    'name': 'meta.preprocessor.pragma.hart-eddl'
+    'patterns': [
+      {
+        'include': '#strings'
+      }
+      {
+        'match': '[a-zA-Z_$][\\w\\-$]*'
+        'name': 'entity.other.attribute-name.pragma.preprocessor.hart-eddl'
+      }
+      {
+        'include': '#numbers'
+      }
+      {
+        'include': '#line_continuation_character'
+      }
+    ]
+  }
+  {
+    'match': '\\b(u_char|u_short|u_int|u_long|ushort|uint|u_quad_t|quad_t|qaddr_t|caddr_t|daddr_t|div_t|dev_t|fixpt_t|blkcnt_t|blksize_t|gid_t|in_addr_t|in_port_t|ino_t|key_t|mode_t|nlink_t|id_t|pid_t|off_t|segsz_t|swblk_t|uid_t|id_t|clock_t|size_t|ssize_t|time_t|useconds_t|suseconds_t)\\b'
+    'name': 'support.type.sys-types.hart-eddl'
+  }
+  {
+    'match': '\\b(pthread_attr_t|pthread_cond_t|pthread_condattr_t|pthread_mutex_t|pthread_mutexattr_t|pthread_once_t|pthread_rwlock_t|pthread_rwlockattr_t|pthread_t|pthread_key_t)\\b'
+    'name': 'support.type.pthread.hart-eddl'
+  }
+  {
+    'match': '''(?x) \\b
+      (int8_t|int16_t|int32_t|int64_t|uint8_t|uint16_t|uint32_t|uint64_t|int_least8_t
+      |int_least16_t|int_least32_t|int_least64_t|uint_least8_t|uint_least16_t|uint_least32_t
+      |uint_least64_t|int_fast8_t|int_fast16_t|int_fast32_t|int_fast64_t|uint_fast8_t
+      |uint_fast16_t|uint_fast32_t|uint_fast64_t|intptr_t|uintptr_t|intmax_t|intmax_t
+      |uintmax_t|uintmax_t)
+      \\b'''
+    'name': 'support.type.stdint.hart-eddl'
+  }
+  {
+    'match': '\\b(noErr|kNilOptions|kInvalidID|kVariableLengthArray)\\b'
+    'name': 'support.constant.mac-classic.hart-eddl'
+  }
+  {
+    'match': '''(?x) \\b
+      (AbsoluteTime|Boolean|Byte|ByteCount|ByteOffset|BytePtr|CompTimeValue|ConstLogicalAddress|ConstStrFileNameParam
+      |ConstStringPtr|Duration|Fixed|FixedPtr|Float32|Float32Point|Float64|Float80|Float96|FourCharCode|Fract|FractPtr
+      |Handle|ItemCount|LogicalAddress|OptionBits|OSErr|OSStatus|OSType|OSTypePtr|PhysicalAddress|ProcessSerialNumber
+      |ProcessSerialNumberPtr|ProcHandle|Ptr|ResType|ResTypePtr|ShortFixed|ShortFixedPtr|SignedByte|SInt16|SInt32|SInt64
+      |SInt8|Size|StrFileName|StringHandle|StringPtr|TimeBase|TimeRecord|TimeScale|TimeValue|TimeValue64|UInt16|UInt32
+      |UInt64|UInt8|UniChar|UniCharCount|UniCharCountPtr|UniCharPtr|UnicodeScalarValue|UniversalProcHandle|UniversalProcPtr
+      |UnsignedFixed|UnsignedFixedPtr|UnsignedWide|UTF16Char|UTF32Char|UTF8Char)
+      \\b'''
+    'name': 'support.type.mac-classic.hart-eddl'
+  }
+  {
+    # Reserved POSIX types
+    'match': '\\b([A-Za-z0-9_]+_t)\\b'
+    'name': 'support.type.posix-reserved.hart-eddl'
+  }
+  {
+    'include': '#block'
+  }
+  {
+    'include': '#parens'
+  }
+  {
+    # FIRST CAPTURE meta.function.c scope (provides an injectable scope, balanced parentheses and prevents unnecessary scope nesting)
+    'begin': '''(?x)
+      (?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void)\\s*\\()
+      (?=
+        (?:[A-Za-z_][A-Za-z0-9_]*+|::)++\\s*\\(  # actual name
+        |
+        (?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\\s*\\(
+      )
+    '''
+    'end': '(?<=\\))(?!\\w)'
+    'name': 'meta.function.hart-eddl'
+    'patterns': [
+      {
+        'include': '#function-innards'
+      }
+    ]
+  }
+  {
+    'include': '#line_continuation_character'
+  }
+  {
+    'match': '(\\[)|(\\])'
+    'captures':
+      '1':
+        'name': 'punctuation.definition.begin.bracket.square.hart-eddl'
+      '2':
+        'name': 'punctuation.definition.end.bracket.square.hart-eddl'
+  }
+  {
+    'match': ';'
+    'name': 'punctuation.terminator.statement.hart-eddl'
+  }
+  {
+    'match': ','
+    'name': 'punctuation.separator.delimiter.hart-eddl'
+  }
+]
+'repository':
+  'access':
+    'captures':
+      '2':
+        'name': 'punctuation.separator.dot-access.hart-eddl'
+      '3':
+        'name': 'punctuation.separator.pointer-access.hart-eddl'
+      '4':
+        'name': 'variable.other.member.hart-eddl'
+    'match': '((\\.)|(->))\\s*(([a-zA-Z_][a-zA-Z_0-9]*)\\b(?!\\s*\\())?'
+  'block':
+    'patterns': [
+      {
+        'begin': '{'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.section.block.begin.bracket.curly.hart-eddl'
+        'end': '}|(?=\\s*#\\s*(?:elif|else|endif)\\b)'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.section.block.end.bracket.curly.hart-eddl'
+        'name': 'meta.block.hart-eddl'
+        'patterns': [
+          {
+            'include': '#block_innards'
+          }
+        ]
+      }
+    ]
+  'block_innards':
+    'patterns': [
+      {
+        'include': '#preprocessor-rule-enabled-block'
+      }
+      {
+        'include': '#preprocessor-rule-disabled-block'
+      }
+      {
+        'include': '#preprocessor-rule-conditional-block'
+      }
+      {
+        'include': '#access'
+      }
+      {
+        'include': '#libc'
+      }
+      {
+        'include': '#c_function_call'
+      }
+      {
+        'captures':
+          '1':
+            'name': 'variable.other.hart-eddl'
+          '2':
+            'name': 'punctuation.definition.parameters.hart-eddl'
+        'match': '''(?x)
+          (?:
+            (?:
+              (?=\\s)(?<!else|new|return)
+              (?<=\\w) \\s+  # or word + space before name
+            )
+          )
+          (
+            (?:[A-Za-z_][A-Za-z0-9_]*+ | :: )++   # actual name
+            |
+            (?:(?<=operator) (?:[-*&<>=+!]+ | \\(\\) | \\[\\]))
+          )
+          \\s*(\\() # opening bracket
+        '''
+        'name': 'meta.initialization.hart-eddl'
+      }
+      {
+        # Prevent unnecessary nesting of meta.block.c scope
+        'begin': '{'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.section.block.begin.bracket.curly.hart-eddl'
+        'end': '}|(?=\\s*#\\s*(?:elif|else|endif)\\b)'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.section.block.end.bracket.curly.hart-eddl'
+        'patterns': [
+          {
+            'include': '#block_innards'
+          }
+        ]
+      }
+      {
+        'include': '#parens-block'
+      }
+      {
+        'include': '$base'
+      }
+    ]
+  'c_function_call':
+    # FIRST CAPTURE meta.function-call.c scope (provides an injectable scope, balanced parentheses and prevents unnecessary scope nesting)
+    'begin': '''(?x)
+      (?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate)\\s*\\()
+      (?=
+      (?:[A-Za-z_][A-Za-z0-9_]*+|::)++\\s*\\(  # actual name
+      |
+      (?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\\s*\\(
+      )
+    '''
+    'end': '(?<=\\))(?!\\w)'
+    'name': 'meta.function-call.hart-eddl'
+    'patterns': [
+      {
+        'include': '#function-call-innards'
+      }
+    ]
+  'comments':
+    'patterns': [
+      {
+        'captures':
+          '1':
+            'name': 'meta.toc-list.banner.block.hart-eddl'
+        'match': '^/\\* =(\\s*.*?)\\s*= \\*/$\\n?'
+        'name': 'comment.block.hart-eddl'
+      }
+      {
+        'begin': '/\\*'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.begin.hart-eddl'
+        'end': '\\*/'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.comment.end.hart-eddl'
+        'name': 'comment.block.hart-eddl'
+      }
+      {
+        'match': '\\*/.*\\n'
+        'name': 'invalid.illegal.stray-comment-end.hart-eddl'
+      }
+      {
+        'captures':
+          '1':
+            'name': 'meta.toc-list.banner.line.hart-eddl'
+        'match': '^// =(\\s*.*?)\\s*=\\s*$\\n?'
+        'name': 'comment.line.banner.hart-eddl'
+      }
+      {
+        'begin': '(^[ \\t]+)?(?=//)'
+        'beginCaptures':
+          '1':
+            'name': 'punctuation.whitespace.comment.leading.hart-eddl'
+        'end': '(?!\\G)'
+        'patterns': [
+          {
+            'begin': '//'
+            'beginCaptures':
+              '0':
+                'name': 'punctuation.definition.comment.hart-eddl'
+            'end': '(?=\\n)'
+            'name': 'comment.line.double-slash.hart-eddl'
+            'patterns': [
+              {
+                'include': '#line_continuation_character'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  'disabled':
+    # Consume nested preprocessor if(def)s
+    'begin': '^\\s*#\\s*if(n?def)?\\b.*$'
+    'end': '^\\s*#\\s*endif\\b'
+    'patterns': [
+      {
+        'include': '#disabled'
+      }
+      {
+        'include': '#pragma-mark'
+      }
+    ]
+  'libc':
+    'captures':
+      '1':
+        'name': 'punctuation.whitespace.support.function.leading.hart-eddl'
+      '2':
+        'name': 'support.function.C99.hart-eddl'
+    'match': '''(?x) (\\s*) \\b
+      (_Exit|(?:nearbyint|nextafter|nexttoward|netoward|nan)[fl]?|a(?:cos|sin)h?[fl]?|abort|abs|asctime|assert
+      |atan(?:[h2]?[fl]?)?|atexit|ato[ifl]|atoll|bsearch|btowc|cabs[fl]?|cacos|cacos[fl]|cacosh[fl]?
+      |calloc|carg[fl]?|casinh?[fl]?|catanh?[fl]?|cbrt[fl]?|ccosh?[fl]?|ceil[fl]?|cexp[fl]?|cimag[fl]?
+      |clearerr|clock|clog[fl]?|conj[fl]?|copysign[fl]?|cosh?[fl]?|cpow[fl]?|cproj[fl]?|creal[fl]?
+      |csinh?[fl]?|csqrt[fl]?|ctanh?[fl]?|ctime|difftime|div|erfc?[fl]?|exit|fabs[fl]?
+      |exp(?:2[fl]?|[fl]|m1[fl]?)?|fclose|fdim[fl]?|fe[gs]et(?:env|exceptflag|round)|feclearexcept
+      |feholdexcept|feof|feraiseexcept|ferror|fetestexcept|feupdateenv|fflush|fgetpos|fgetw?[sc]
+      |floor[fl]?|fmax?[fl]?|fmin[fl]?|fmod[fl]?|fopen|fpclassify|fprintf|fputw?[sc]|fread|free|freopen
+      |frexp[fl]?|fscanf|fseek|fsetpos|ftell|fwide|fwprintf|fwrite|fwscanf|genv|get[sc]|getchar|gmtime
+      |gwc|gwchar|hypot[fl]?|ilogb[fl]?|imaxabs|imaxdiv|isalnum|isalpha|isblank|iscntrl|isdigit|isfinite
+      |isgraph|isgreater|isgreaterequal|isinf|isless(?:equal|greater)?|isw?lower|isnan|isnormal|isw?print
+      |isw?punct|isw?space|isunordered|isw?upper|iswalnum|iswalpha|iswblank|iswcntrl|iswctype|iswdigit|iswgraph
+      |isw?xdigit|labs|ldexp[fl]?|ldiv|lgamma[fl]?|llabs|lldiv|llrint[fl]?|llround[fl]?|localeconv|localtime
+      |log[2b]?[fl]?|log1[p0][fl]?|longjmp|lrint[fl]?|lround[fl]?|malloc|mbr?len|mbr?towc|mbsinit|mbsrtowcs
+      |mbstowcs|memchr|memcmp|memcpy|memmove|memset|mktime|modf[fl]?|perror|pow[fl]?|printf|puts|putw?c(?:har)?
+      |qsort|raise|rand|remainder[fl]?|realloc|remove|remquo[fl]?|rename|rewind|rint[fl]?|round[fl]?|scalbl?n[fl]?
+      |scanf|setbuf|setjmp|setlocale|setvbuf|signal|signbit|sinh?[fl]?|snprintf|sprintf|sqrt[fl]?|srand|sscanf
+      |strcat|strchr|strcmp|strcoll|strcpy|strcspn|strerror|strftime|strlen|strncat|strncmp|strncpy|strpbrk
+      |strrchr|strspn|strstr|strto[kdf]|strtoimax|strtol[dl]?|strtoull?|strtoumax|strxfrm|swprintf|swscanf
+      |system|tan|tan[fl]|tanh[fl]?|tgamma[fl]?|time|tmpfile|tmpnam|tolower|toupper|trunc[fl]?|ungetw?c|va_arg
+      |va_copy|va_end|va_start|vfw?printf|vfw?scanf|vprintf|vscanf|vsnprintf|vsprintf|vsscanf|vswprintf|vswscanf
+      |vwprintf|vwscanf|wcrtomb|wcscat|wcschr|wcscmp|wcscoll|wcscpy|wcscspn|wcsftime|wcslen|wcsncat|wcsncmp|wcsncpy
+      |wcspbrk|wcsrchr|wcsrtombs|wcsspn|wcsstr|wcsto[dkf]|wcstoimax|wcstol[dl]?|wcstombs|wcstoull?|wcstoumax|wcsxfrm
+      |wctom?b|wmem(?:set|chr|cpy|cmp|move)|wprintf|wscanf)\\b
+    '''
+  'line_continuation_character':
+    'patterns': [
+      {
+        'match': '(\\\\)\\n'
+        'captures':
+          '1':
+            'name': 'constant.character.escape.line-continuation.hart-eddl'
+      }
+    ]
+  'numbers':
+    'patterns': [
+      {
+        'match': '\\b((0(x|X)[0-9a-fA-F]([0-9a-fA-F\']*[0-9a-fA-F])?)|(0(b|B)[01]([01\']*[01])?)|(([0-9]([0-9\']*[0-9])?\\.?[0-9]*([0-9\']*[0-9])?)|(\\.[0-9]([0-9\']*[0-9])?))((e|E)(\\+|-)?[0-9]([0-9\']*[0-9])?)?)(L|l|UL|ul|u|U|F|f|ll|LL|ull|ULL)?\\b'
+        'name': 'constant.numeric.hart-eddl'
+      }
+    ]
+  'parens':
+    'begin': '\\('
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.section.parens.begin.bracket.round.hart-eddl'
+    'end': '\\)'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.section.parens.end.bracket.round.hart-eddl'
+    'patterns': [
+      {
+        'include': '$base'
+      }
+    ]
+  'parens-block':
+    'begin': '\\('
+    'beginCaptures':
+      '0':
+        'name': 'punctuation.section.parens.begin.bracket.round.hart-eddl'
+    'end': '\\)'
+    'endCaptures':
+      '0':
+        'name': 'punctuation.section.parens.end.bracket.round.hart-eddl'
+    'patterns': [
+      {
+        'include': '#block_innards'
+      }
+    ]
+  'pragma-mark':
+    'captures':
+      '1':
+        'name': 'meta.preprocessor.pragma.hart-eddl'
+      '2':
+        'name': 'keyword.control.directive.pragma.pragma-mark.hart-eddl'
+      '3':
+        'name': 'punctuation.definition.directive.hart-eddl'
+      '4':
+        'name': 'entity.name.tag.pragma-mark.hart-eddl'
+    'match': '^\\s*(((#)\\s*pragma\\s+mark)\\s+(.*))'
+    'name': 'meta.section'
+  'operators':
+    'patterns': [
+      {
+        'match': '(?<![\\w$])(sizeof)(?![\\w$])'
+        'name': 'keyword.operator.sizeof.hart-eddl'
+      }
+      {
+        'match': '--'
+        'name': 'keyword.operator.decrement.hart-eddl'
+      }
+      {
+        'match': '\\+\\+'
+        'name': 'keyword.operator.increment.hart-eddl'
+      }
+      {
+        'match': '%=|\\+=|-=|\\*=|(?<!\\()/='
+        'name': 'keyword.operator.assignment.compound.hart-eddl'
+      }
+      {
+        'match': '&=|\\^=|<<=|>>=|\\|='
+        'name': 'keyword.operator.assignment.compound.bitwise.hart-eddl'
+      }
+      {
+        'match': '<<|>>'
+        'name': 'keyword.operator.bitwise.shift.hart-eddl'
+      }
+      {
+        'match': '!=|<=|>=|==|<|>'
+        'name': 'keyword.operator.comparison.hart-eddl'
+      }
+      {
+        'match': '&&|!|\\|\\|'
+        'name': 'keyword.operator.logical.hart-eddl'
+      }
+      {
+        'match': '&|\\||\\^|~'
+        'name': 'keyword.operator.hart-eddl'
+      }
+      {
+        'match': '='
+        'name': 'keyword.operator.assignment.hart-eddl'
+      }
+      {
+        'match': '%|\\*|/|-|\\+'
+        'name': 'keyword.operator.hart-eddl'
+      }
+      {
+        'begin': '\\?'
+        'beginCaptures':
+          '0':
+            'name': 'keyword.operator.ternary.hart-eddl'
+        'end': ':'
+        'applyEndPatternLast': true # To prevent matching C++ namespace access ::
+        'endCaptures':
+          '0':
+            'name': 'keyword.operator.ternary.hart-eddl'
+        'patterns': [
+          {
+            'include': '#access'
+          }
+          {
+            'include': '#libc'
+          }
+          {
+            'include': '#c_function_call'
+          }
+          {
+            'include': '$base'
+          }
+        ]
+      }
+    ]
+  'strings':
+    'patterns': [
+      {
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.hart-eddl'
+        'end': '"'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.hart-eddl'
+        'name': 'string.quoted.double.hart-eddl'
+        'patterns': [
+          {
+            'include': '#string_escaped_char'
+          }
+          {
+            'include': '#string_placeholder'
+          }
+          {
+            'include': '#line_continuation_character'
+          }
+        ]
+      }
+      {
+        'begin': '\''
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.hart-eddl'
+        'end': '\''
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.hart-eddl'
+        'name': 'string.quoted.single.hart-eddl'
+        'patterns': [
+          {
+            'include': '#string_escaped_char'
+          }
+          {
+            'include': '#line_continuation_character'
+          }
+        ]
+      }
+    ]
+  'string_escaped_char':
+    'patterns': [
+      {
+        'match': '''(?x)\\\\ (
+            \\\\             |
+            [abefnprtv'"?]   |
+            [0-3]\\d{,2}     |
+            [4-7]\\d?        |
+            x[a-fA-F0-9]{,2} |
+            u[a-fA-F0-9]{,4} |
+            U[a-fA-F0-9]{,8} )
+        '''
+        'name': 'constant.character.escape.hart-eddl'
+      }
+      {
+        'match': '\\\\.'
+        'name': 'invalid.illegal.unknown-escape.hart-eddl'
+      }
+    ]
+  'string_placeholder':
+    'patterns': [
+      {
+        'match': '''(?x) %
+          (\\d+\\$)?                           # field (argument #)
+          [#0\\- +']*                          # flags
+          [,;:_]?                              # separator character (AltiVec)
+          ((-?\\d+)|\\*(-?\\d+\\$)?)?          # minimum field width
+          (\\.((-?\\d+)|\\*(-?\\d+\\$)?)?)?    # precision
+          (hh|h|ll|l|j|t|z|q|L|vh|vl|v|hv|hl)? # length modifier
+          [diouxXDOUeEfFgGaACcSspn%]           # conversion type
+        '''
+        'name': 'constant.other.placeholder.hart-eddl'
+      }
+      {
+        'match': '(%)(?!"\\s*(PRI|SCN))'
+        'captures':
+          '1':
+            'name': 'invalid.illegal.placeholder.hart-eddl'
+      }
+    ]
+  'storage_types':
+    'patterns': [
+      {
+        'match': '\\b(asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void)\\b'
+        'name': 'storage.type.hart-eddl'
+      }
+    ]
+  'vararg_ellipses':
+    'match': '(?<!\\.)\\.\\.\\.(?!\\.)'
+    'name': 'punctuation.vararg-ellipses.hart-eddl'
+  'preprocessor-rule-conditional':
+    'patterns': [
+      {
+        'begin': '^\\s*((#)\\s*if(?:n?def)?\\b)'
+        'beginCaptures':
+          '0':
+            'name': 'meta.preprocessor.hart-eddl'
+          '1':
+            'name': 'keyword.control.directive.conditional.hart-eddl'
+          '2':
+            'name': 'punctuation.definition.directive.hart-eddl'
+        'end': '^\\s*((#)\\s*endif\\b)'
+        'endCaptures':
+          '0':
+            'name': 'meta.preprocessor.hart-eddl'
+          '1':
+            'name': 'keyword.control.directive.conditional.hart-eddl'
+          '2':
+            'name': 'punctuation.definition.directive.hart-eddl'
+        'patterns': [
+          {
+            'begin': '\\G(?=.)(?!//|/\\*(?!.*\\\\\\s*\\n))'
+            'end': '(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))|(?<!\\\\)(?=\\n)'
+            'name': 'meta.preprocessor.hart-eddl'
+            'patterns': [
+              {
+                'include': '#preprocessor-rule-conditional-line'
+              }
+            ]
+          }
+          #NEVER CHANGE THE ORDER OF THE FOLLOWING INCLUDES!!!
+          #Their order provides commenting logic
+          {
+            'include': '#preprocessor-rule-enabled-elif'
+          }
+          {
+            'include': '#preprocessor-rule-enabled-else'
+          }
+          {
+            'include': '#preprocessor-rule-disabled-elif'
+          }
+          {
+            'begin': '^\\s*((#)\\s*elif\\b)'
+            'beginCaptures':
+              '1':
+                'name': 'keyword.control.directive.conditional.hart-eddl'
+              '2':
+                'name': 'punctuation.definition.directive.hart-eddl'
+            'end': '(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))|(?<!\\\\)(?=\\n)'
+            'name': 'meta.preprocessor.hart-eddl'
+            'patterns': [
+              {
+                'include': '#preprocessor-rule-conditional-line'
+              }
+            ]
+          }
+          {
+            'include': '$base'
+          }
+        ]
+      }
+      {
+        'match': '^\\s*#\\s*(else|elif|endif)\\b'
+        'captures':
+          '0':
+            'name': 'invalid.illegal.stray-$1.hart-eddl'
+      }
+    ]
+  'preprocessor-rule-conditional-block':
+    'patterns': [
+      {
+        'begin': '^\\s*((#)\\s*if(?:n?def)?\\b)'
+        'beginCaptures':
+          '0':
+            'name': 'meta.preprocessor.hart-eddl'
+          '1':
+            'name': 'keyword.control.directive.conditional.hart-eddl'
+          '2':
+            'name': 'punctuation.definition.directive.hart-eddl'
+        'end': '^\\s*((#)\\s*endif\\b)'
+        'endCaptures':
+          '0':
+            'name': 'meta.preprocessor.hart-eddl'
+          '1':
+            'name': 'keyword.control.directive.conditional.hart-eddl'
+          '2':
+            'name': 'punctuation.definition.directive.hart-eddl'
+        'patterns': [
+          {
+            'begin': '\\G(?=.)(?!//|/\\*(?!.*\\\\\\s*\\n))'
+            'end': '(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))|(?<!\\\\)(?=\\n)'
+            'name': 'meta.preprocessor.hart-eddl'
+            'patterns': [
+              {
+                'include': '#preprocessor-rule-conditional-line'
+              }
+            ]
+          }
+          {
+            'include': '#preprocessor-rule-enabled-elif-block'
+          }
+          {
+            'include': '#preprocessor-rule-enabled-else-block'
+          }
+          {
+            'include': '#preprocessor-rule-disabled-elif'
+          }
+          {
+            'begin': '^\\s*((#)\\s*elif\\b)'
+            'beginCaptures':
+              '1':
+                'name': 'keyword.control.directive.conditional.hart-eddl'
+              '2':
+                'name': 'punctuation.definition.directive.hart-eddl'
+            'end': '(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))|(?<!\\\\)(?=\\n)'
+            'name': 'meta.preprocessor.hart-eddl'
+            'patterns': [
+              {
+                'include': '#preprocessor-rule-conditional-line'
+              }
+            ]
+          }
+          {
+            'include': '#block_innards'
+          }
+        ]
+      }
+      {
+        'match': '^\\s*#\\s*(else|elif|endif)\\b'
+        'captures':
+          '0':
+            'name': 'invalid.illegal.stray-$1.hart-eddl'
+      }
+    ]
+  'preprocessor-rule-conditional-line':
+    'patterns': [
+      {
+        #the valid "defined" keyword usage
+        'match': '(?:\\bdefined\\b\\s*$)|(?:\\bdefined\\b(?=\\s*\\(*\\s*(?:(?!defined\\b)[a-zA-Z_$][\\w$]*\\b)\\s*\\)*\\s*(?:\\n|//|/\\*|\\?|\\:|&&|\\|\\||\\\\\\s*\\n)))'
+        'name': 'keyword.control.directive.conditional.hart-eddl'
+      }
+      {
+        #consume prohibited macro names
+        'match': '\\bdefined\\b'
+        'name': 'invalid.illegal.macro-name.hart-eddl'
+      }
+      {
+        'include': '#comments'
+      }
+      {
+        'include': '#strings'
+      }
+      {
+        'include': '#numbers'
+      }
+      {
+        #Catch ternary operators here and implement a custom one
+        'begin': '\\?'
+        'beginCaptures':
+          '0':
+            'name': 'keyword.operator.ternary.hart-eddl'
+        'end': ':'
+        'endCaptures':
+          '0':
+            'name': 'keyword.operator.ternary.hart-eddl'
+        'patterns': [
+          {
+            'include': '#preprocessor-rule-conditional-line'
+          }
+        ]
+      }
+      {
+        'include': '#operators'
+      }
+      {
+        'match': '\\b(NULL|true|false|TRUE|FALSE)\\b'
+        'name': 'constant.language.hart-eddl'
+      }
+      {
+        'match': '[a-zA-Z_$][\\w$]*'
+        'name': 'entity.name.function.preprocessor.hart-eddl'
+      }
+      {
+        'include': '#line_continuation_character'
+      }
+      {
+        'begin': '\\('
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.section.parens.begin.bracket.round.hart-eddl'
+        'end': '\\)|(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))|(?<!\\\\)(?=\\n)'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.section.parens.end.bracket.round.hart-eddl'
+        'patterns': [
+          {
+            'include': '#preprocessor-rule-conditional-line'
+          }
+        ]
+      }
+    ]
+  'preprocessor-rule-disabled':
+    'patterns': [
+      {
+        'begin': '^\\s*((#)\\s*if\\b)(?=\\s*\\(*\\b0+\\b\\)*\\s*(?:$|//|/\\*))'
+        'beginCaptures':
+          '0':
+            'name': 'meta.preprocessor.hart-eddl'
+          '1':
+            'name': 'keyword.control.directive.conditional.hart-eddl'
+          '2':
+            'name': 'punctuation.definition.directive.hart-eddl'
+        'end': '^\\s*((#)\\s*endif\\b)'
+        'endCaptures':
+          '0':
+            'name': 'meta.preprocessor.hart-eddl'
+          '1':
+            'name': 'keyword.control.directive.conditional.hart-eddl'
+          '2':
+            'name': 'punctuation.definition.directive.hart-eddl'
+        'patterns': [
+          {
+            'begin': '\\G(?=.)(?!//|/\\*(?!.*\\\\\\s*\\n))'
+            'end': '(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))|(?=\\n)'
+            'name': 'meta.preprocessor.hart-eddl'
+            'patterns': [
+              {
+                'include': '#preprocessor-rule-conditional-line'
+              }
+            ]
+          }
+          {
+            'include': '#comments'
+          }
+          {
+            'include': '#preprocessor-rule-enabled-elif'
+          }
+          {
+            'include': '#preprocessor-rule-enabled-else'
+          }
+          {
+            'include': '#preprocessor-rule-disabled-elif'
+          }
+          {
+            'begin': '^\\s*((#)\\s*elif\\b)'
+            'beginCaptures':
+              '0':
+                'name': 'meta.preprocessor.hart-eddl'
+              '1':
+                'name': 'keyword.control.directive.conditional.hart-eddl'
+              '2':
+                'name': 'punctuation.definition.directive.hart-eddl'
+            'end': '(?=^\\s*((#)\\s*(?:elif|else|endif)\\b))'
+            'patterns': [
+              {
+                'begin': '\\G(?=.)(?!//|/\\*(?!.*\\\\\\s*\\n))'
+                'end': '(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))|(?<!\\\\)(?=\\n)'
+                'name': 'meta.preprocessor.hart-eddl'
+                'patterns': [
+                  {
+                    'include': '#preprocessor-rule-conditional-line'
+                  }
+                ]
+              }
+              {
+                'include': '$base'
+              }
+            ]
+          }
+          {
+            'begin': '\\n'
+            'end': '(?=^\\s*((#)\\s*(?:else|elif|endif)\\b))'
+            'contentName': 'comment.block.preprocessor.if-branch.hart-eddl'
+            'patterns': [
+              {
+                'include': '#disabled'
+              }
+              {
+                'include': '#pragma-mark'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  'preprocessor-rule-disabled-block':
+    'patterns': [
+      {
+        'begin': '^\\s*((#)\\s*if\\b)(?=\\s*\\(*\\b0+\\b\\)*\\s*(?:$|//|/\\*))'
+        'beginCaptures':
+          '0':
+            'name': 'meta.preprocessor.hart-eddl'
+          '1':
+            'name': 'keyword.control.directive.conditional.hart-eddl'
+          '2':
+            'name': 'punctuation.definition.directive.hart-eddl'
+        'end': '^\\s*((#)\\s*endif\\b)'
+        'endCaptures':
+          '0':
+            'name': 'meta.preprocessor.hart-eddl'
+          '1':
+            'name': 'keyword.control.directive.conditional.hart-eddl'
+          '2':
+            'name': 'punctuation.definition.directive.hart-eddl'
+        'patterns': [
+          {
+            'begin': '\\G(?=.)(?!//|/\\*(?!.*\\\\\\s*\\n))'
+            'end': '(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))|(?=\\n)'
+            'name': 'meta.preprocessor.hart-eddl'
+            'patterns': [
+              {
+                'include': '#preprocessor-rule-conditional-line'
+              }
+            ]
+          }
+          {
+            'include': '#comments'
+          }
+          {
+            'include': '#preprocessor-rule-enabled-elif-block'
+          }
+          {
+            'include': '#preprocessor-rule-enabled-else-block'
+          }
+          {
+            'include': '#preprocessor-rule-disabled-elif'
+          }
+          {
+            'begin': '^\\s*((#)\\s*elif\\b)'
+            'beginCaptures':
+              '0':
+                'name': 'meta.preprocessor.hart-eddl'
+              '1':
+                'name': 'keyword.control.directive.conditional.hart-eddl'
+              '2':
+                'name': 'punctuation.definition.directive.hart-eddl'
+            'end': '(?=^\\s*((#)\\s*(?:elif|else|endif)\\b))'
+            'patterns': [
+              {
+                'begin': '\\G(?=.)(?!//|/\\*(?!.*\\\\\\s*\\n))'
+                'end': '(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))|(?<!\\\\)(?=\\n)'
+                'name': 'meta.preprocessor.hart-eddl'
+                'patterns': [
+                  {
+                    'include': '#preprocessor-rule-conditional-line'
+                  }
+                ]
+              }
+              {
+                'include': '#block_innards'
+              }
+            ]
+          }
+          {
+            'begin': '\\n'
+            'end': '(?=^\\s*((#)\\s*(?:else|elif|endif)\\b))'
+            'contentName': 'comment.block.preprocessor.if-branch.in-block.hart-eddl'
+            'patterns': [
+              {
+                'include': '#disabled'
+              }
+              {
+                'include': '#pragma-mark'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  'preprocessor-rule-disabled-elif':
+    'begin': '^\\s*((#)\\s*elif\\b)(?=\\s*\\(*\\b0+\\b\\)*\\s*(?:$|//|/\\*))'
+    'beginCaptures':
+      '0':
+        'name': 'meta.preprocessor.hart-eddl'
+      '1':
+        'name': 'keyword.control.directive.conditional.hart-eddl'
+      '2':
+        'name': 'punctuation.definition.directive.hart-eddl'
+    'end': '(?=^\\s*((#)\\s*(?:elif|else|endif)\\b))'
+    'patterns': [
+      {
+        'begin': '\\G(?=.)(?!//|/\\*(?!.*\\\\\\s*\\n))'
+        'end': '(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))|(?<!\\\\)(?=\\n)'
+        'name': 'meta.preprocessor.hart-eddl'
+        'patterns': [
+          {
+            'include': '#preprocessor-rule-conditional-line'
+          }
+        ]
+      }
+      {
+        'include': '#comments'
+      }
+      {
+        'begin': '\\n'
+        'end': '(?=^\\s*((#)\\s*(?:else|elif|endif)\\b))'
+        'contentName': 'comment.block.preprocessor.elif-branch.hart-eddl'
+        'patterns': [
+          {
+            'include': '#disabled'
+          }
+          {
+            'include': '#pragma-mark'
+          }
+        ]
+      }
+    ]
+  'preprocessor-rule-enabled':
+    'patterns': [
+      {
+        'begin': '^\\s*((#)\\s*if\\b)(?=\\s*\\(*\\b0*1\\b\\)*\\s*(?:$|//|/\\*))'
+        'beginCaptures':
+          '0':
+            'name': 'meta.preprocessor.hart-eddl'
+          '1':
+            'name': 'keyword.control.directive.conditional.hart-eddl'
+          '2':
+            'name': 'punctuation.definition.directive.hart-eddl'
+          '3':
+            'name': 'constant.numeric.preprocessor.hart-eddl'
+        'end': '^\\s*((#)\\s*endif\\b)'
+        'endCaptures':
+          '0':
+            'name': 'meta.preprocessor.hart-eddl'
+          '1':
+            'name': 'keyword.control.directive.conditional.hart-eddl'
+          '2':
+            'name': 'punctuation.definition.directive.hart-eddl'
+        'patterns': [
+          {
+            'begin': '\\G(?=.)(?!//|/\\*(?!.*\\\\\\s*\\n))'
+            'end': '(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))|(?=\\n)'
+            'name': 'meta.preprocessor.hart-eddl'
+            'patterns': [
+              {
+                'include': '#preprocessor-rule-conditional-line'
+              }
+            ]
+          }
+          {
+            'include': '#comments'
+          }
+          {
+            'begin': '^\\s*((#)\\s*else\\b)'
+            'beginCaptures':
+              '0':
+                'name': 'meta.preprocessor.hart-eddl'
+              '1':
+                'name': 'keyword.control.directive.conditional.hart-eddl'
+              '2':
+                'name': 'punctuation.definition.directive.hart-eddl'
+            'end': '(?=^\\s*((#)\\s*endif\\b))'
+            'contentName': 'comment.block.preprocessor.else-branch.hart-eddl'
+            'patterns': [
+              {
+                'include': '#disabled'
+              }
+              {
+                'include': '#pragma-mark'
+              }
+            ]
+          }
+          {
+            'begin': '^\\s*((#)\\s*elif\\b)'
+            'beginCaptures':
+              '0':
+                'name': 'meta.preprocessor.hart-eddl'
+              '1':
+                'name': 'keyword.control.directive.conditional.hart-eddl'
+              '2':
+                'name': 'punctuation.definition.directive.hart-eddl'
+            'end': '(?=^\\s*((#)\\s*(?:else|elif|endif)\\b))'
+            'contentName': 'comment.block.preprocessor.if-branch.hart-eddl'
+            'patterns': [
+              {
+                'include': '#disabled'
+              }
+              {
+                'include': '#pragma-mark'
+              }
+            ]
+          }
+          {
+            'begin': '\\n'
+            'end': '(?=^\\s*((#)\\s*(?:else|elif|endif)\\b))'
+            'patterns': [
+              {
+                'include': '$base'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  'preprocessor-rule-enabled-block':
+    'patterns': [
+      {
+        'begin': '^\\s*((#)\\s*if\\b)(?=\\s*\\(*\\b0*1\\b\\)*\\s*(?:$|//|/\\*))'
+        'beginCaptures':
+          '0':
+            'name': 'meta.preprocessor.hart-eddl'
+          '1':
+            'name': 'keyword.control.directive.conditional.hart-eddl'
+          '2':
+            'name': 'punctuation.definition.directive.hart-eddl'
+        'end': '^\\s*((#)\\s*endif\\b)'
+        'endCaptures':
+          '0':
+            'name': 'meta.preprocessor.hart-eddl'
+          '1':
+            'name': 'keyword.control.directive.conditional.hart-eddl'
+          '2':
+            'name': 'punctuation.definition.directive.hart-eddl'
+        'patterns': [
+          {
+            'begin': '\\G(?=.)(?!//|/\\*(?!.*\\\\\\s*\\n))'
+            'end': '(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))|(?=\\n)'
+            'name': 'meta.preprocessor.hart-eddl'
+            'patterns': [
+              {
+                'include': '#preprocessor-rule-conditional-line'
+              }
+            ]
+          }
+          {
+            'include': '#comments'
+          }
+          {
+            'begin': '^\\s*((#)\\s*else\\b)'
+            'beginCaptures':
+              '0':
+                'name': 'meta.preprocessor.hart-eddl'
+              '1':
+                'name': 'keyword.control.directive.conditional.hart-eddl'
+              '2':
+                'name': 'punctuation.definition.directive.hart-eddl'
+            'end': '(?=^\\s*((#)\\s*endif\\b))'
+            'contentName': 'comment.block.preprocessor.else-branch.in-block.hart-eddl'
+            'patterns': [
+              {
+                'include': '#disabled'
+              }
+              {
+                'include': '#pragma-mark'
+              }
+            ]
+          }
+          {
+            'begin': '^\\s*((#)\\s*elif\\b)'
+            'beginCaptures':
+              '0':
+                'name': 'meta.preprocessor.hart-eddl'
+              '1':
+                'name': 'keyword.control.directive.conditional.hart-eddl'
+              '2':
+                'name': 'punctuation.definition.directive.hart-eddl'
+            'end': '(?=^\\s*((#)\\s*(?:else|elif|endif)\\b))'
+            'contentName': 'comment.block.preprocessor.if-branch.in-block.hart-eddl'
+            'patterns': [
+              {
+                'include': '#disabled'
+              }
+              {
+                'include': '#pragma-mark'
+              }
+            ]
+          }
+          {
+            'begin': '\\n'
+            'end': '(?=^\\s*((#)\\s*(?:else|elif|endif)\\b))'
+            'patterns': [
+              {
+                'include': '#block_innards'
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  'preprocessor-rule-enabled-elif':
+    'begin': '^\\s*((#)\\s*elif\\b)(?=\\s*\\(*\\b0*1\\b\\)*\\s*(?:$|//|/\\*))'
+    'beginCaptures':
+      '0':
+        'name': 'meta.preprocessor.hart-eddl'
+      '1':
+        'name': 'keyword.control.directive.conditional.hart-eddl'
+      '2':
+        'name': 'punctuation.definition.directive.hart-eddl'
+    'end': '(?=^\\s*((#)\\s*endif\\b))'
+    'patterns': [
+      {
+        'begin': '\\G(?=.)(?!//|/\\*(?!.*\\\\\\s*\\n))'
+        'end': '(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))|(?<!\\\\)(?=\\n)'
+        'name': 'meta.preprocessor.hart-eddl'
+        'patterns': [
+          {
+            'include': '#preprocessor-rule-conditional-line'
+          }
+        ]
+      }
+      {
+        'include': '#comments'
+      }
+      {
+        'begin': '\\n'
+        'end': '(?=^\\s*((#)\\s*(?:endif)\\b))'
+        'patterns': [
+          {
+            'begin': '^\\s*((#)\\s*(else)\\b)'
+            'beginCaptures':
+              '0':
+                'name': 'meta.preprocessor.hart-eddl'
+              '1':
+                'name': 'keyword.control.directive.conditional.hart-eddl'
+              '2':
+                'name': 'punctuation.definition.directive.hart-eddl'
+            'end': '(?=^\\s*((#)\\s*endif\\b))'
+            'contentName': 'comment.block.preprocessor.elif-branch.hart-eddl'
+            'patterns': [
+              {
+                'include': '#disabled'
+              }
+              {
+                'include': '#pragma-mark'
+              }
+            ]
+          }
+          {
+            'begin': '^\\s*((#)\\s*(elif)\\b)'
+            'beginCaptures':
+              '0':
+                'name': 'meta.preprocessor.hart-eddl'
+              '1':
+                'name': 'keyword.control.directive.conditional.hart-eddl'
+              '2':
+                'name': 'punctuation.definition.directive.hart-eddl'
+            'end': '(?=^\\s*((#)\\s*(?:else|elif|endif)\\b))'
+            'contentName': 'comment.block.preprocessor.elif-branch.hart-eddl'
+            'patterns': [
+              {
+                'include': '#disabled'
+              }
+              {
+                'include': '#pragma-mark'
+              }
+            ]
+          }
+          {
+            'include': '$base'
+          }
+        ]
+      }
+    ]
+  'preprocessor-rule-enabled-elif-block':
+    'begin': '^\\s*((#)\\s*elif\\b)(?=\\s*\\(*\\b0*1\\b\\)*\\s*(?:$|//|/\\*))'
+    'beginCaptures':
+      '0':
+        'name': 'meta.preprocessor.hart-eddl'
+      '1':
+        'name': 'keyword.control.directive.conditional.hart-eddl'
+      '2':
+        'name': 'punctuation.definition.directive.hart-eddl'
+    'end': '(?=^\\s*((#)\\s*endif\\b))'
+    'patterns': [
+      {
+        'begin': '\\G(?=.)(?!//|/\\*(?!.*\\\\\\s*\\n))'
+        'end': '(?=//)|(?=/\\*(?!.*\\\\\\s*\\n))|(?<!\\\\)(?=\\n)'
+        'name': 'meta.preprocessor.hart-eddl'
+        'patterns': [
+          {
+            'include': '#preprocessor-rule-conditional-line'
+          }
+        ]
+      }
+      {
+        'include': '#comments'
+      }
+      {
+        'begin': '\\n'
+        'end': '(?=^\\s*((#)\\s*(?:endif)\\b))'
+        'patterns': [
+          {
+            'begin': '^\\s*((#)\\s*(else)\\b)'
+            'beginCaptures':
+              '0':
+                'name': 'meta.preprocessor.hart-eddl'
+              '1':
+                'name': 'keyword.control.directive.conditional.hart-eddl'
+              '2':
+                'name': 'punctuation.definition.directive.hart-eddl'
+            'end': '(?=^\\s*((#)\\s*endif\\b))'
+            'contentName': 'comment.block.preprocessor.elif-branch.in-block.hart-eddl'
+            'patterns': [
+              {
+                'include': '#disabled'
+              }
+              {
+                'include': '#pragma-mark'
+              }
+            ]
+          }
+          {
+            'begin': '^\\s*((#)\\s*(elif)\\b)'
+            'beginCaptures':
+              '0':
+                'name': 'meta.preprocessor.hart-eddl'
+              '1':
+                'name': 'keyword.control.directive.conditional.hart-eddl'
+              '2':
+                'name': 'punctuation.definition.directive.hart-eddl'
+            'end': '(?=^\\s*((#)\\s*(?:else|elif|endif)\\b))'
+            'contentName': 'comment.block.preprocessor.elif-branch.hart-eddl'
+            'patterns': [
+              {
+                'include': '#disabled'
+              }
+              {
+                'include': '#pragma-mark'
+              }
+            ]
+          }
+          {
+            'include': '#block_innards'
+          }
+        ]
+      }
+    ]
+  'preprocessor-rule-enabled-else':
+    'begin': '^\\s*((#)\\s*else\\b)'
+    'beginCaptures':
+      '0':
+        'name': 'meta.preprocessor.hart-eddl'
+      '1':
+        'name': 'keyword.control.directive.conditional.hart-eddl'
+      '2':
+        'name': 'punctuation.definition.directive.hart-eddl'
+    'end': '(?=^\\s*((#)\\s*endif\\b))'
+    'patterns': [
+      {
+        'include': '$base'
+      }
+    ]
+  'preprocessor-rule-enabled-else-block':
+    'begin': '^\\s*((#)\\s*else\\b)'
+    'beginCaptures':
+      '0':
+        'name': 'meta.preprocessor.hart-eddl'
+      '1':
+        'name': 'keyword.control.directive.conditional.hart-eddl'
+      '2':
+        'name': 'punctuation.definition.directive.hart-eddl'
+    'end': '(?=^\\s*((#)\\s*endif\\b))'
+    'patterns': [
+      {
+        'include': '#block_innards'
+      }
+    ]
+  'preprocessor-rule-define-line-contents':
+    'patterns': [
+      {
+        'include': '#vararg_ellipses'
+      }
+      {
+        # block pattern for #define lines (terminates at newline w/o line_continuation_character)
+        'begin': '{'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.section.block.begin.bracket.curly.hart-eddl'
+        'end': '}|(?=\\s*#\\s*(?:elif|else|endif)\\b)|(?<!\\\\)(?=\\s*\\n)'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.section.block.end.bracket.curly.hart-eddl'
+        'name': 'meta.block.hart-eddl'
+        'patterns': [
+          {
+            'include': '#preprocessor-rule-define-line-blocks'
+          }
+        ]
+      }
+      {
+        'match': '\\('
+        'name': 'punctuation.section.parens.begin.bracket.round.hart-eddl'
+      }
+      {
+        'match': '\\)'
+        'name': 'punctuation.section.parens.end.bracket.round.hart-eddl'
+      }
+      {
+        # Function scope patterns for #define lines (terminates at newline w/o line_continuation_character)
+        # FIRST CAPTURE meta.function.c scope (provides an injectable scope, balanced parentheses and prevents unnecessary scope nesting)
+        'begin': '''(?x)
+          (?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate|asm|__asm__|auto|bool|_Bool|char|_Complex|double|enum|float|_Imaginary|int|long|short|signed|struct|typedef|union|unsigned|void)\\s*\\()
+          (?=
+            (?:[A-Za-z_][A-Za-z0-9_]*+|::)++\\s*\\(  # actual name
+            |
+            (?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))\\s*\\(
+          )
+        '''
+        'end': '(?<=\\))(?!\\w)|(?<!\\\\)(?=\\s*\\n)'
+        'name': 'meta.function.hart-eddl'
+        'patterns': [
+          {
+            'include': '#preprocessor-rule-define-line-functions'
+          }
+        ]
+      }
+      {
+        # double quoted string patterns for #define lines (terminates at newline w/o line_continuation_character)
+        'begin': '"'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.hart-eddl'
+        'end': '"|(?<!\\\\)(?=\\s*\\n)'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.hart-eddl'
+        'name': 'string.quoted.double.hart-eddl'
+        'patterns': [
+          {
+            'include': '#string_escaped_char'
+          }
+          {
+            'include': '#string_placeholder'
+          }
+          {
+            'include': '#line_continuation_character'
+          }
+        ]
+      }
+      {
+        # single quoted string patterns for #define lines (terminates at newline w/o line_continuation_character)
+        'begin': '\''
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.definition.string.begin.hart-eddl'
+        'end': '\'|(?<!\\\\)(?=\\s*\\n)'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.definition.string.end.hart-eddl'
+        'name': 'string.quoted.single.hart-eddl'
+        'patterns': [
+          {
+            'include': '#string_escaped_char'
+          }
+          {
+            'include': '#line_continuation_character'
+          }
+        ]
+      }
+      {
+        'include': '#access'
+      }
+      {
+        'include': '#libc'
+      }
+      {
+        'include': '$base'
+      }
+    ]
+  'preprocessor-rule-define-line-blocks':
+    'patterns': [
+      {
+        # Prevent unnecessary nesting of meta.block.c scope
+        'begin': '{'
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.section.block.begin.bracket.curly.hart-eddl'
+        'end': '}|(?=\\s*#\\s*(?:elif|else|endif)\\b)|(?<!\\\\)(?=\\s*\\n)'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.section.block.end.bracket.curly.hart-eddl'
+        'patterns': [
+          {
+            'include': '#preprocessor-rule-define-line-blocks'
+          }
+          {
+            'include': '#preprocessor-rule-define-line-contents'
+          }
+        ]
+      }
+      {
+        'include': '#preprocessor-rule-define-line-contents'
+      }
+    ]
+  'preprocessor-rule-define-line-functions':
+    'patterns': [
+      {
+        'include': '#comments'
+      }
+      {
+        'include': '#storage_types'
+      }
+      {
+        'include': '#vararg_ellipses'
+      }
+      {
+        'include': '#access'
+      }
+      {
+        'include': '#operators'
+      }
+      {
+        # Function patterns in #define lines (terminates at newline w/o line_continuation_character)
+        'begin': '''(?x)
+          (?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate)\\s*\\()
+          (
+          (?:[A-Za-z_][A-Za-z0-9_]*+|::)++  # actual name
+          |
+          (?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))
+          )
+          \\s*(\\()
+        '''
+        'beginCaptures':
+          '1':
+            'name': 'entity.name.function.hart-eddl'
+          '2':
+            'name': 'punctuation.section.arguments.begin.bracket.round.hart-eddl'
+        'end': '(\\))|(?<!\\\\)(?=\\s*\\n)'
+        'endCaptures':
+          '1':
+            'name': 'punctuation.section.arguments.end.bracket.round.hart-eddl'
+        'patterns': [
+          {
+            'include': '#preprocessor-rule-define-line-functions'
+          }
+        ]
+      }
+      {
+        # Capture parentheses (terminates at newline w/o line_continuation_character)
+        'begin': '\\('
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.section.parens.begin.bracket.round.hart-eddl'
+        'end': '(\\))|(?<!\\\\)(?=\\s*\\n)'
+        'endCaptures':
+          '1':
+            'name': 'punctuation.section.parens.end.bracket.round.hart-eddl'
+        'patterns': [
+          {
+            # Provides right matching of inner parentheses
+            'include': '#preprocessor-rule-define-line-functions'
+          }
+        ]
+      }
+      {
+        'include': '#preprocessor-rule-define-line-contents'
+      }
+    ]
+  'function-innards':
+    'patterns': [
+      {
+        'include': '#comments'
+      }
+      {
+        'include': '#storage_types'
+      }
+      {
+        'include': '#operators'
+      }
+      {
+        'include': '#vararg_ellipses'
+      }
+      {
+        'begin': '''(?x)
+          (?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate)\\s*\\()
+          (
+          (?:[A-Za-z_][A-Za-z0-9_]*+|::)++  # actual name
+          |
+          (?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))
+          )
+          \\s*(\\()
+        '''
+        'beginCaptures':
+          '1':
+            'name': 'entity.name.function.hart-eddl'
+          '2':
+            'name': 'punctuation.section.parameters.begin.bracket.round.hart-eddl'
+        'end': '\\)'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.section.parameters.end.bracket.round.hart-eddl'
+        'patterns': [
+          {
+            'include': '#function-innards'
+          }
+        ]
+      }
+      {
+        'begin': '\\('
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.section.parens.begin.bracket.round.hart-eddl'
+        'end': '\\)'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.section.parens.end.bracket.round.hart-eddl'
+        'patterns': [
+          {
+            'include': '#function-innards'
+          }
+        ]
+      }
+      {
+        'include': '$base'
+      }
+    ]
+  'function-call-innards':
+    'patterns': [
+      {
+        'include': '#comments'
+      }
+      {
+        'include': '#storage_types'
+      }
+      {
+        'include': '#access'
+      }
+      {
+        'include': '#operators'
+      }
+      {
+        'begin': '''(?x)
+          (?!(?:while|for|do|if|else|switch|catch|enumerate|return|typeid|alignof|alignas|sizeof|[cr]?iterate)\\s*\\()
+          (
+          (?:[A-Za-z_][A-Za-z0-9_]*+|::)++  # actual name
+          |
+          (?:(?<=operator)(?:[-*&<>=+!]+|\\(\\)|\\[\\]))
+          )
+          \\s*(\\()
+        '''
+        'beginCaptures':
+          '1':
+            'name': 'entity.name.function.hart-eddl'
+          '2':
+            'name': 'punctuation.section.arguments.begin.bracket.round.hart-eddl'
+        'end': '\\)'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.section.arguments.end.bracket.round.hart-eddl'
+        'patterns': [
+          {
+            'include': '#function-call-innards'
+          }
+        ]
+      }
+      {
+        'begin': '\\('
+        'beginCaptures':
+          '0':
+            'name': 'punctuation.section.parens.begin.bracket.round.hart-eddl'
+        'end': '\\)'
+        'endCaptures':
+          '0':
+            'name': 'punctuation.section.parens.end.bracket.round.hart-eddl'
+        'patterns': [
+          {
+            'include': '#function-call-innards'
+          }
+        ]
+      }
+      {
+        'include': '#block_innards'
+      }
+    ]
