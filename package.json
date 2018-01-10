@@ -1,21 +1,20 @@
 {
   "name": "language-hart-eddl",
   "main": "./lib/language-hart-eddl",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Atom language support for HART Foundation ddl and dd files.",
   "keywords": [
-     "ddl",
-     "dd",
-     "syntax",
-     "language",
-     "grammar",
-     "hart"
+    "ddl",
+    "dd",
+    "syntax",
+    "language",
+    "grammar",
+    "hart"
   ],
   "repository": "https://github.com/clayauld/language-hart-eddl",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
